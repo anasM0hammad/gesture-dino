@@ -1,0 +1,13 @@
+{
+  "name": "dino-script-runner",
+  "version": "1.0.0",
+  "description": "A Chrome extension that runs a script on all web pages.",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.28",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Gesture Dino Runner",
+    "version": "1.0.0",
+    "description": "A custom offline Dino game that runs when there's no internet.",
+    "icons": {
+        "16": "icons/dino16.png",
+        "48": "icons/dino16.png",
+        "128": "icons/dino16.png"
+    },
+    "background": {
+        "service_worker": "dist/background.js"
+    },
+    "action": {
+        "default_title": "Play Dino Game"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "js": ["dist/content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["dino/*", "dino/assets/*"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "permissions": ["declarativeNetRequest", "storage", "tabs"]
+}
