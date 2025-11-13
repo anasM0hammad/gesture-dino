@@ -24,7 +24,7 @@ function startHandTracking(onGesture) {
 
   hands.onResults((results) => {
     if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
-      const landmarks = results.multiHandLandmarks[0];
+      const landmarks = results.multiHandLandmarks;
       onGesture(landmarks);
     }
   });

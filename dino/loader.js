@@ -3,22 +3,42 @@ function synthKeyEvent(type) {
     key: "ArrowDown",
     code: "ArrowDown",
     keyCode: 40,
-    which: 40,
+    which:  40,
     location: 0,
     repeat: type === "keydown",
     bubbles: true,
     cancelable: true,
   });
 
-  Object.defineProperty(e, "keyCode", { get: () => 40 });
-  Object.defineProperty(e, "which", { get: () => 40 });
+  Object.defineProperty(e, "keyCode", { get: () =>  40 });
+  Object.defineProperty(e, "which", { get: () =>  40 });
 
   return e;
 }
 
-function sendDuckKey(type) {
-  const ev = synthKeyEvent(type);
+function synthSpaceEvent(type) {
+  const e = new KeyboardEvent(type, {
+    key: " ",
+    code: "Space",
+    keyCode: 32,
+    which: 32,
+    keyIdentifier: "U+0020",
+    bubbles: true,
+    cancelable: true,
+  });
 
+  Object.defineProperty(e, "keyCode", { get: () => 32 });
+  Object.defineProperty(e, "which",   { get: () => 32 });
+  Object.defineProperty(e, "code",    { get: () => "Space" });
+  Object.defineProperty(e, "key",     { get: () => " " });
+
+  return e;
+}
+
+function sendDuckKey(type, key) {
+  const ev = key === "space" ? synthSpaceEvent(type) :  synthKeyEvent(type);
+
+  window.dispatchEvent(ev);
   document.dispatchEvent(ev);
   document.body.dispatchEvent(ev);
 
@@ -38,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
     setTimeout(() => {
-      window.startHandTracking((hand) => {
-        // console.log(hand);
+      window.startHandTracking((hands) => {
+        const hand = hands[0];
         const indexTipX = hand[8].x;
         const indexTipY = hand[8].y;
         const thumbTipX = hand[4].x;
@@ -52,6 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const now = performance.now();
 
         const pinch =  distance < 0.005;
+        console.log(runner.crashed);
+        if(hands.length > 1 && runner.crashed){
+          sendDuckKey('keyup', 'space');
+        }
         if(indexTipY > thumbTipY){
           if(!duckActive){
             duckActive = true;
