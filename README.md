@@ -101,7 +101,7 @@ Dino game assets are part of the **Chromium Project**, licensed under the **BSD 
 Source: https://github.com/chromium/chromium
 
 ### **Dino Runner**
-Dino runner game source code 
+Dino runner game source code.
 Source: https://github.com/wayou/t-rex-runner
 
 ### **MediaPipe Hands**
