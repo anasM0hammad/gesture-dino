@@ -33,7 +33,7 @@ html, body {
   line-height: 1.55;
   margin: 0 auto;
   max-width: 600px;
-  padding-top: 100px;
+  padding-top: 15 0px;
   width: 100%;
 }
 
@@ -42,7 +42,7 @@ html, body {
   max-width: 600px;
   overflow: hidden;
   position: absolute;
-  top: 35px;
+  top: 150px;
   width: 44px;
 }
 

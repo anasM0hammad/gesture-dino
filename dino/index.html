@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title >Gesture Dino</title>
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
     <script src="index.js"></script>
     <script src="mediapipe/camera_utils.js"></script>
     <script src="mediapipe/drawing_utils.js"></script>
@@ -20,6 +19,9 @@
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
          <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Press Space to start</h1>
+         <h2 style="text-align: center;"><img src="assets/pinch.png" style="border-radius: 50%;" width="25" height="25"/> Pinch to jump</h3>
+         <h2 style="text-align: center;"><img src="assets/fist.png" style="border-radius: 50%;" width="25" height="25"/> Fist to duck</h3>
+         <h2 style="text-align: center;"><img src="assets/hands.png" style="border-radius: 50%;" width="30" height="25"/> Show two hands to restart</h3>
          <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
