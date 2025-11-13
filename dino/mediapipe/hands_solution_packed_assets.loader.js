@@ -1,0 +1,1 @@
+Couldn't find the requested file /hands_solution_packed_assets.loader.js in @mediapipe/hands.
