@@ -1,7 +1,7 @@
 {
-  "name": "dino-script-runner",
-  "version": "1.0.0",
-  "description": "A Chrome extension that runs a script on all web pages.",
+  "name": "G-Rex",
+  "version": "1.1.0",
+  "description": "A custom offline Dino game that can be controlled based on hand gestures.",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch"

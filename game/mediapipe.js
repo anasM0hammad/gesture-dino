@@ -12,7 +12,7 @@ function startHandTracking(onGesture) {
   // Initialize Mediapipe Hands
   const hands = new Hands({
     locateFile: (file) =>
-      chrome.runtime.getURL(`dino/mediapipe/${file}`)
+      chrome.runtime.getURL(`game/mediapipe/${file}`)
   });
 
   hands.setOptions({
