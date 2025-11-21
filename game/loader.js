@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const pinch =  distance < 0.005;
         console.log(runner.crashed);
         if(hands.length > 1 && runner.crashed){
-          sendDuckKey('keyup', 'space');
+          // sendDuckKey('keyup', 'space');
         }
         if(indexTipY > thumbTipY){
           if(!duckActive){
