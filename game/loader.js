@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const now = performance.now();
 
         const pinch =  distance < 0.005;
-        console.log(runner.crashed);
         if(hands.length > 1 && runner.crashed){
           // sendDuckKey('keyup', 'space');
         }
