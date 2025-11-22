@@ -18,6 +18,7 @@ Features:
   - Added a landing page for the game with instructions
   - Removed two hand gesture for game restart
   - Logo updated
+  - Restructured the code and project
 
 ## 1.0.0 (2025-11-15)
 

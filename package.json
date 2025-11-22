@@ -3,11 +3,16 @@
   "version": "1.1.0",
   "description": "A custom offline Dino game that can be controlled based on hand gestures.",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "clean": "rimraf dist",
+    "build:ts": "tsc",
+    "build:static": "copyfiles -u 1 \"public/**/*\" dist",
+    "build": "npm run clean && npm run build:ts && npm run build:static"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.28",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.1.2",
     "typescript": "^5.6.3"
   }
 }

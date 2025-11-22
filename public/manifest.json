@@ -10,7 +10,7 @@
         "128": "icons/icon128.png"
     },
     "background": {
-        "service_worker": "dist/background.js"
+        "service_worker": "background.js"
     },
     "action": {
         "default_title": "Play Dino Game",
@@ -19,7 +19,7 @@
     "content_scripts": [
         {
             "matches": ["https://*/*", "http://*/*"],
-            "js": ["dist/content.js"]
+            "js": ["content.js"]
         }
     ],
     "web_accessible_resources": [
