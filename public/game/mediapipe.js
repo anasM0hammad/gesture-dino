@@ -4,7 +4,9 @@ function startHandTracking(onGesture) {
 
   // Create hidden video source
   const video = document.createElement("video");
-  video.style.display = "none";
+  video.style.position = "absolute";
+  video.style.top = "70vh";
+  video.style.left = "40px";
   document.body.appendChild(video);
 
   const Hands = window.Hands;
@@ -38,8 +40,8 @@ function startHandTracking(onGesture) {
     onFrame: async () => {
       await hands.send({ image: video });
     },
-    width: 640,
-    height: 480
+    width: 320,
+    height: 240
   });
 
   camera.start();

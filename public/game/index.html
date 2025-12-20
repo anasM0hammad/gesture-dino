@@ -4,7 +4,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>G-Rex - Hand Gesture Dino Runner Game</title>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
 <style>
     :root {
       --primary-color: #4F46E5;
@@ -112,14 +112,10 @@
       border: none;
       box-shadow: 0 10px 15px -3px var(--indigo-500-alpha), 0 4px 6px -4px var(--indigo-500-alpha);
       transition: background-color 0.2s;
+      text-decoration: none;
     }
     .start-button:hover {
       background-color: rgba(79, 70, 229, 0.9);
-    }
-    .start-button-text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .instructions-container {
       width: 100%;
@@ -197,11 +193,6 @@
         'opsz' 24
     }
 
-    .start-button a{
-      text-decoration: none;
-      color: white;
-    }
-
     @media (min-width: 640px) {
       .instruction-card {
         flex-direction: row;
@@ -224,14 +215,12 @@
         <div class="content-wrapper">
           <div class="layout-content-container">
             <div class="header-section">
-              <img src="../icons/icon.png" width="100" height="100"/>
+              <img src="../icons/icon.png" width="120" height="100"/>
               <h1 class="main-title">G-Rex</h1>
-              <p class="description">A custom offline Dino game that can be controlled based on hand gestures.</p>
+              <p class="description">A custom offline dino game that can be controlled based on hand gestures.</p>
             </div>
             <div class="button-container">
-              <button class="start-button">
-                <a href="main.html"><span class="start-button-text">Start Game</span></a>
-              </button>
+              <a href="main.html" class="start-button">Start Game</a>
             </div>
             <div class="instructions-container">
               <div class="instructions-grid">
