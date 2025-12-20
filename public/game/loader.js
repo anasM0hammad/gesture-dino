@@ -50,15 +50,42 @@ function sendDuckKey(type, key) {
   }
 }
 
+function updateScoreCard(runner) {
+  const scoreEl = document.getElementById('current-score');
+  const highestEl = document.getElementById('high-score');
+  const distanceEl = document.getElementById('distance');
+  const speedEl = document.getElementById('speed');
+
+  const speed = +runner.currentSpeed.toFixed(1);
+  const score = runner.distanceMeter.getActualDistance(runner.distanceRan);
+  const highest = runner.distanceMeter.getActualDistance(runner.highestScore);
+  const distance = Math.floor(+runner.distanceRan);
+
+  scoreEl.innerHTML = score.toString();
+  speedEl.innerHTML = `${speed}`;
+  highestEl.innerHTML = highest;
+  distanceEl.innerHTML = `${distance.toString()} M`;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const runner = new window.Runner('.runner-container');
     let duckActive = false;
     let duckHoldUntil = 0;
     let lastPinch = 0;  
-
-  
+   
     setTimeout(() => {
       window.startHandTracking((hands) => {
+        // Toggle start with space message box
+        const messageBox = document.getElementById('messageBox');
+        if(runner.playing){
+          messageBox.style.display = 'none';
+        }
+        else{
+          messageBox.style.display = 'inherit';
+        }
+
+        updateScoreCard(runner);
+
         const hand = hands[0];
         const indexTipX = hand[8].x;
         const indexTipY = hand[8].y;
