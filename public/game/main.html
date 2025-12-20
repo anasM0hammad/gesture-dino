@@ -140,6 +140,7 @@
             display: flex;
             gap: 1.5rem;
             justify-content: space-between;
+            margin-bottom: 5px;
         }
         
         .camera-box, .score-box {
@@ -369,6 +370,22 @@
             font-size: 0.875rem;
             text-shadow: 0 0 5px var(--arcade-neon-green);
             margin: 0 0 1.5rem 0;
+        }
+
+        @media (max-width: 1500px){
+            .game-container {
+                width: 80%;
+                height: 50vh;
+                min-height: 300px;
+            }
+
+            .bottom-panel{
+                width: 80%;
+            }
+            
+            .camera-box {
+                min-height: 200px;
+            }
         }
         
         @media (max-width: 768px) {
