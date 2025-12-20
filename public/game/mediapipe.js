@@ -4,20 +4,18 @@ function startHandTracking(onGesture) {
 
   // Create video source (will be moved to camera display by main.html)
   const video = document.createElement("video");
+  const videoContainer = document.getElementById('camera-display');
+  const videoPlaceholder = document.getElementById('video-placeholder');
   video.autoplay = true;
   video.playsInline = true;
   video.muted = true;
   video.id = "camera-video-stream";
   video.setAttribute("data-camera-stream", "true");
   // Initial positioning - will be overridden when moved to camera display
-  video.style.position = "absolute";
-  video.style.top = "70vh";
-  video.style.left = "40px";
-  video.style.width = "320px";
-  video.style.height = "240px";
-  video.style.opacity = "0";
-  video.style.pointerEvents = "none";
-  document.body.appendChild(video);
+  video.width = '100%';
+  video.height = '100%';
+  videoPlaceholder.style.display = 'none';
+  videoContainer.appendChild(video);
   
   // Dispatch custom event when video is created
   setTimeout(() => {
